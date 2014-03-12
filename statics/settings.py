@@ -25,6 +25,7 @@ class Config(object):
 
     # Frozen-Flask Settings
     FREEZER_IGNORE_MIMETYPE_WARNINGS = True
+    FREEZER_RELATIVE_URLS = True
     FREEZER_DESTINATION = '../build'
 
 

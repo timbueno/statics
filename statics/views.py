@@ -20,14 +20,14 @@ def index():
     posts = [p for p in flatpages if p.path.startswith(current_app.config['POST_DIR'])]
     return render_template('index.html', posts=posts)
 
-@route(bp, '/pages/<name>')
+@route(bp, '/pages/<name>/')
 def page(name):
     """For non-blogpost pages, e.g. About, Contact, etc..."""
     path = '{}/{}'.format(current_app.config['PAGE_DIR'], name)
     page = flatpages.get_or_404(path)
     return render_template('page.html', page=page)
 
-@route(bp, '/posts/<name>')
+@route(bp, '/posts/<name>/')
 def post(name):
     """For blogpost type pages"""
     path = '{}/{}'.format(current_app.config['POST_DIR'], name)
